@@ -556,6 +556,50 @@
         </data>
       </profile>
     </profiles>
+    <profiles func="0x09" description="Gas Sensor">
+      <profile type="0x04" description="Temperature Sensor Range 0°C to +51°C">
+        <data>
+          <value description="Rel. Humidity (linear)" shortcut="HUM" offset="0" size="8" unit="%">
+            <range>
+              <min>100</min>
+              <max>0</max>
+            </range>
+            <scale>
+              <min>0.000000</min>
+              <max>100.000000</max>
+            </scale>
+          </value>
+          <value description="CO2 Concentration (linear)" shortcut="CONC" offset="8" size="8" unit="ppm">
+            <range>
+              <min>255</min>
+              <max>0</max>
+            </range>
+            <scale>
+              <min>0.000000</min>
+              <max>2550.000000</max>
+            </scale>
+          </value>
+          <value description="Temperature (linear)" shortcut="TMP" offset="16" size="8" unit="°C">
+            <range>
+              <min>0</min>
+              <max>255</max>
+            </range>
+            <scale>
+              <min>0.000000</min>
+              <max>51.000000</max>
+            </scale>
+          </value>
+          <enum description="Availability of the Humidity Sensor" shortcut="HSN" offset="29" size="1">
+            <item description="not available" value="0" />
+            <item description="available" value="1" />
+          </enum>
+          <enum description="Availability of the Temperature Sensor" shortcut="TSN" offset="30" size="1">
+            <item description="not available" value="0" />
+            <item description="available" value="1" />
+          </enum>
+        </data>
+      </profile>
+    </profiles>
     <profiles description="Room Operating Panel" func="0x10">
       <profile description="Temperature Sensor and Set Point" type="0x03">
         <data>
